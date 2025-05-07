@@ -1,3 +1,14 @@
+void MouseMove( int dx , int dy ) {
+	
+	INPUT input = { 1 };
+	input.type = INPUT_MOUSE;
+	input.mi.dx = dx;
+	input.mi.dy = dy;
+	input.mi.dwFlags = TOUCHEVENTF_MOVE;
+
+	SendInput( 1 , &input , sizeof( INPUT ) );
+}
+
 ImVec2 CalculateAimOffset(const FVector2D& target2D, const ImVec2& screenCenter, int aimSpeed, float screenWidth, float screenHeight) {
 	float targetX = 0.0f;
 	float targetY = 0.0f;
